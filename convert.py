@@ -67,30 +67,9 @@ shutil.copytree(originDir, exportDir)
 
 # Walla Walla Campus Mask
 
-# print("Changing filenames...")
-# for filename in os.listdir(exportDir):
-#     os.rename(exportDir + filename, exportDir + filename[9:])
-#
-# for idx, val in enumerate(data):
-#     current = int(val[photo])
-#     if(not(data[idx + 1][photo])):
-#         nextV = current + 1
-#     else:
-#         nextV = int(data[idx + 1][photo])
-#     # TODO: change this to reflect end case
-#     while (not(current >= nextV) and not(current > stop)):
-#         try:
-#             os.rename(exportDir + str("{0:0=5d}".format(current)) + ".jpg",exportDir + str("{0:0=5d}".format(current)) + "-" + str("{0:0=7d}".format(int(val[wwuid]))) + ".jpg")
-#         except OSError as err:
-#             print("ERROR on ", current, ".jpg , ", err)
-#             pass
-#         except:
-#             print("ERROR on ", data[idx], current)
-#             pass
-#         #code.interact(local=locals())
-#         current += 1
-
-# Portland Mask
+print("Changing filenames...")
+for filename in os.listdir(exportDir):
+    os.rename(exportDir + filename, exportDir + filename[9:])
 
 for idx, val in enumerate(data):
     current = int(val[photo])
@@ -98,6 +77,7 @@ for idx, val in enumerate(data):
         nextV = current + 1
     else:
         nextV = int(data[idx + 1][photo])
+    # TODO: change this to reflect end case
     while (not(current >= nextV) and not(current > stop)):
         try:
             os.rename(exportDir + str("{0:0=5d}".format(current)) + ".jpg",exportDir + str("{0:0=5d}".format(current)) + "-" + str("{0:0=7d}".format(int(val[wwuid]))) + ".jpg")
@@ -109,5 +89,6 @@ for idx, val in enumerate(data):
             pass
         #code.interact(local=locals())
         current += 1
+
 
 print("FINISHED")
