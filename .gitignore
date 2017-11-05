@@ -1,6 +1,7 @@
 EXPORT/**
 Mask 2017/**
+Portland Mask/**
 databases/**
 emails.txt
-id2photo.csv
+*.csv
 Originals
